@@ -16,6 +16,7 @@ import { ResetPasswordConfirmationScreen } from '../screens/Auth/ResetPasswordCo
 import { OnboardingSuccessScreen } from '../screens/Auth/OnboardingSuccessScreen';
 import { NewPasswordScreen } from '../screens/Auth/NewPasswordScreen';
 import { ProfileQuestionnaireScreen } from '../screens/common/ProfileQuestionnaireScreen';
+import { WelcomeScreen } from '../screens/Auth/WelcomeScreen';
 
 // --- Tipos de Navegación ---
 
@@ -53,11 +54,12 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 export const AuthNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="RoleSelection"
+      initialRouteName="Welcome"
       screenOptions={{
         headerShown: false,
       }}
     >
+      <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="RoleSelection" component={RoleSelectionScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
